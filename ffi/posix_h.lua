@@ -50,6 +50,7 @@ static const int POLLHUP = 16;
 int poll(struct pollfd *, long unsigned int, int);
 static const int PROT_READ = 1;
 static const int PROT_WRITE = 2;
+static const int MAP_PRIVATE = 2;
 static const int MAP_SHARED = 1;
 static const int MAP_FAILED = -1;
 void *mmap(void *, long unsigned int, int, int, int, long int) __attribute__((__nothrow__, __leaf__));
@@ -60,7 +61,7 @@ int statvfs(const char *restrict, struct statvfs *restrict) __attribute__((__not
 int gettimeofday(struct timeval *restrict, struct timezone *restrict) __attribute__((__nothrow__, __leaf__));
 char *realpath(const char *restrict, char *restrict) __attribute__((__nothrow__, __leaf__));
 void *malloc(long unsigned int) __attribute__((malloc, leaf, nothrow));
-void free(void *) __attribute__((__nothrow__, __leaf__));
+void free(void *) __attribute__((leaf, nothrow));
 char *strdup(const char *) __attribute__((malloc, leaf, nothrow));
 char *strndup(const char *, long unsigned int) __attribute__((malloc, leaf, nothrow));
 struct _IO_FILE *fopen(const char *restrict, const char *restrict);

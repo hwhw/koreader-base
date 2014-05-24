@@ -48,6 +48,7 @@ cdecl_func(poll)
 
 cdecl_const(PROT_READ)
 cdecl_const(PROT_WRITE)
+cdecl_const(MAP_PRIVATE)
 cdecl_const(MAP_SHARED)
 cdecl_const(MAP_FAILED)
 cdecl_func(mmap)
